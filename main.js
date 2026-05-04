@@ -32,7 +32,7 @@ function createBall(number, delay, isBonus = false) {
   return ball;
 }
 
-drawButton.addEventListener('click', () => {
+if (drawButton) drawButton.addEventListener('click', () => {
   drawButton.disabled = true;
   numbersContainer.innerHTML = '';
   bonusContainer.innerHTML = '';
