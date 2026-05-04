@@ -1,0 +1,137 @@
+.contact-container {
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--plus-color);
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--title-color);
+}
+
+.contact-container h1 {
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--plus-color);
+  font-size: 14px;
+  margin-bottom: 28px;
+  transition: color 0.3s;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  color: var(--title-color);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  transition: color 0.3s;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--title-color);
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  transition: border 0.2s, background 0.3s, color 0.3s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+body.light .form-group input,
+body.light .form-group select,
+body.light .form-group textarea {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #f0932b;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+body.light .form-group input:focus,
+body.light .form-group select:focus,
+body.light .form-group textarea:focus {
+  background: #fff;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--plus-color);
+  opacity: 0.7;
+}
+
+.form-group select option {
+  background: #1a1a2e;
+  color: #fff;
+}
+
+body.light .form-group select option {
+  background: #fff;
+  color: #1a1a2e;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+#submit-btn {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  background: linear-gradient(135deg, #f9ca24, #f0932b);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(240, 147, 43, 0.4);
+  transition: transform 0.1s, box-shadow 0.1s, opacity 0.2s;
+  margin-top: 8px;
+}
+
+#submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(240, 147, 43, 0.5);
+}
+
+#submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.success-msg {
+  text-align: center;
+  color: #55efc4;
+  font-size: 16px;
+  padding: 30px 0;
+  line-height: 1.6;
+}
+
+body.light .success-msg {
+  color: #00b894;
+}
