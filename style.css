@@ -16,7 +16,7 @@
 }
 
 body.light {
-  --bg: linear-gradient(135deg, #e8eaf6, #fce4ec);
+  --bg: linear-gradient(135deg, #f0f4ff, #fff5f8);
   --card-bg: rgba(255, 255, 255, 0.85);
   --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
   --title-color: #1a1a2e;
