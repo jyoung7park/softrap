@@ -4,28 +4,85 @@
   padding: 0;
 }
 
+:root {
+  --bg: linear-gradient(135deg, #1a1a2e, #16213e);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --title-color: #fff;
+  --plus-color: #aaa;
+  --toggle-bg: rgba(255, 255, 255, 0.1);
+  --toggle-hover: rgba(255, 255, 255, 0.2);
+  --toggle-color: #fff;
+}
+
+body.light {
+  --bg: linear-gradient(135deg, #e8eaf6, #fce4ec);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  --title-color: #1a1a2e;
+  --plus-color: #555;
+  --toggle-bg: rgba(0, 0, 0, 0.08);
+  --toggle-hover: rgba(0, 0, 0, 0.15);
+  --toggle-color: #1a1a2e;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  background: var(--bg);
+  transition: background 0.3s;
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  font-size: 20px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: var(--toggle-bg);
+  color: var(--toggle-color);
+  box-shadow: none;
+  transition: background 0.2s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+#theme-toggle:hover:not(:disabled) {
+  background: var(--toggle-hover);
+  transform: scale(1.1);
+  box-shadow: none;
+}
+
+#theme-toggle:active:not(:disabled) {
+  transform: scale(0.95);
 }
 
 .container {
   text-align: center;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--card-bg);
   border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--card-shadow);
+  transition: background 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(10px);
 }
 
 h1 {
-  color: #fff;
+  color: var(--title-color);
   font-size: 28px;
   margin-bottom: 30px;
   letter-spacing: 2px;
+  transition: color 0.3s;
 }
 
 .numbers {
@@ -47,9 +104,10 @@ h1 {
 }
 
 .plus {
-  color: #aaa;
+  color: var(--plus-color);
   font-size: 24px;
   font-weight: bold;
+  transition: color 0.3s;
 }
 
 .number {
@@ -89,7 +147,7 @@ h1 {
 .gray   { background: radial-gradient(circle at 35% 35%, #b2bec3, #636e72); }
 .green  { background: radial-gradient(circle at 35% 35%, #55efc4, #00b894); }
 
-button {
+button#draw {
   padding: 14px 40px;
   font-size: 18px;
   font-weight: bold;
@@ -102,16 +160,16 @@ button {
   transition: transform 0.1s, box-shadow 0.1s;
 }
 
-button:hover:not(:disabled) {
+button#draw:hover:not(:disabled) {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(240, 147, 43, 0.5);
 }
 
-button:active:not(:disabled) {
+button#draw:active:not(:disabled) {
   transform: translateY(0);
 }
 
-button:disabled {
+button#draw:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }

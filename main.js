@@ -1,6 +1,19 @@
 const drawButton = document.getElementById('draw');
 const numbersContainer = document.getElementById('numbers');
 const bonusContainer = document.getElementById('bonus');
+const themeToggle = document.getElementById('theme-toggle');
+
+const savedTheme = localStorage.getItem('theme') || 'dark';
+if (savedTheme === 'light') {
+  document.body.classList.add('light');
+  themeToggle.textContent = '☀️';
+}
+
+themeToggle.addEventListener('click', () => {
+  const isLight = document.body.classList.toggle('light');
+  themeToggle.textContent = isLight ? '☀️' : '🌙';
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+});
 
 function getBallColor(n) {
   if (n <= 10) return 'yellow';
