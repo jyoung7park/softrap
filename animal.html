@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>동물상 테스트 — 개상 vs 고양이상</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="animal.css">
+  <meta name="google-adsense-account" content="ca-pub-8717722754583942">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8717722754583942" crossorigin="anonymous"></script>
+</head>
+<body>
+  <button id="theme-toggle" aria-label="테마 전환">🌙</button>
+
+  <div class="container animal-container">
+    <a href="index.html" class="back-link">← 홈으로</a>
+    <h1>동물상 테스트</h1>
+    <p class="subtitle">나는 개상? 고양이상?<br>사진으로 확인해봐요 🐾</p>
+
+    <!-- Upload -->
+    <div id="upload-section">
+      <div id="drop-zone" class="drop-zone">
+        <div class="drop-icon">📸</div>
+        <p class="drop-text">클릭하거나 사진을 드래그해서 올려주세요</p>
+        <p class="drop-sub">얼굴이 잘 나온 사진일수록 정확해요</p>
+        <input type="file" id="file-input" accept="image/*" hidden>
+      </div>
+    </div>
+
+    <!-- Preview -->
+    <div id="preview-section" style="display:none;">
+      <img id="preview-img" class="preview-img" alt="업로드 사진">
+      <div class="btn-row">
+        <button id="analyze-btn" class="analyze-btn">🔍 분석하기</button>
+        <button id="reset-btn" class="secondary-btn">다시 선택</button>
+      </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading-section" style="display:none;">
+      <div class="spinner"></div>
+      <p class="loading-text">AI가 분석 중이에요...</p>
+    </div>
+
+    <!-- Result -->
+    <div id="result-section" style="display:none;">
+      <div id="result-card" class="result-card">
+        <div id="result-emoji" class="result-emoji"></div>
+        <div id="result-title" class="result-title"></div>
+        <div id="result-desc" class="result-desc"></div>
+        <div id="result-tags" class="result-tags"></div>
+      </div>
+
+      <div class="score-section">
+        <div class="score-row">
+          <span class="score-label">🐶 개상</span>
+          <div class="score-bar-bg">
+            <div id="dog-bar" class="score-bar dog-bar"></div>
+          </div>
+          <span id="dog-pct" class="score-pct"></span>
+        </div>
+        <div class="score-row">
+          <span class="score-label">🐱 고양이상</span>
+          <div class="score-bar-bg">
+            <div id="cat-bar" class="score-bar cat-bar"></div>
+          </div>
+          <span id="cat-pct" class="score-pct"></span>
+        </div>
+      </div>
+
+      <button id="retry-btn" class="analyze-btn">🔄 다시 테스트</button>
+    </div>
+  </div>
+
+  <div class="disqus-section">
+    <h2>댓글</h2>
+    <div id="disqus_thread"></div>
+    <script>
+      var disqus_config = function () {
+        this.page.url = 'https://softrap.pages.dev/animal.html';
+        this.page.identifier = 'animal';
+      };
+      (function() {
+        var d = document, s = d.createElement('script');
+        s.src = 'https://softrap.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    </script>
+    <noscript>댓글을 보려면 JavaScript를 활성화해주세요. <a href="https://disqus.com/?ref_noscript">Disqus로 제공되는 댓글</a></noscript>
+  </div>
+  <script id="dsq-count-scr" src="//softrap.disqus.com/count.js" async></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+  <script src="main.js"></script>
+  <script src="animal.js"></script>
+</body>
+</html>

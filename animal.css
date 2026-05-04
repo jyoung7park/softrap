@@ -1,0 +1,277 @@
+.animal-container {
+  width: 100%;
+  max-width: 500px;
+}
+
+.drop-zone {
+  border: 2px dashed rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  padding: 50px 30px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  margin: 20px 0;
+}
+
+.drop-zone:hover,
+.drop-zone.drag-over {
+  border-color: #f0932b;
+  background: rgba(240, 147, 43, 0.06);
+}
+
+body.light .drop-zone {
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+body.light .drop-zone:hover,
+body.light .drop-zone.drag-over {
+  border-color: #f0932b;
+  background: rgba(240, 147, 43, 0.06);
+}
+
+.drop-icon {
+  font-size: 52px;
+  margin-bottom: 14px;
+}
+
+.drop-text {
+  color: var(--title-color);
+  font-size: 15px;
+  margin-bottom: 6px;
+  transition: color 0.3s;
+}
+
+.drop-sub {
+  color: var(--plus-color);
+  font-size: 13px;
+  transition: color 0.3s;
+}
+
+.preview-img {
+  max-width: 100%;
+  max-height: 300px;
+  border-radius: 16px;
+  object-fit: cover;
+  margin: 20px auto;
+  display: block;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+}
+
+.btn-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.analyze-btn {
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #f9ca24, #f0932b);
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(240, 147, 43, 0.4);
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.analyze-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(240, 147, 43, 0.5);
+}
+
+.analyze-btn:active {
+  transform: translateY(0);
+}
+
+.secondary-btn {
+  padding: 12px 24px;
+  font-size: 15px;
+  background: transparent;
+  color: var(--plus-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  box-shadow: none;
+}
+
+.secondary-btn:hover {
+  border-color: var(--title-color);
+  color: var(--title-color);
+  transform: none;
+  box-shadow: none;
+}
+
+body.light .secondary-btn {
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Loading */
+.spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid rgba(255, 255, 255, 0.12);
+  border-top-color: #f0932b;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 30px auto 16px;
+}
+
+body.light .spinner {
+  border-color: rgba(0, 0, 0, 0.1);
+  border-top-color: #f0932b;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-text {
+  color: var(--plus-color);
+  font-size: 15px;
+  margin-bottom: 30px;
+  transition: color 0.3s;
+}
+
+/* Result */
+.result-card {
+  border-radius: 20px;
+  padding: 30px;
+  margin: 16px 0 20px;
+}
+
+.dog-card {
+  background: linear-gradient(135deg, rgba(249, 202, 36, 0.12), rgba(240, 147, 43, 0.18));
+  border: 1px solid rgba(240, 147, 43, 0.35);
+}
+
+.cat-card {
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.12), rgba(162, 155, 254, 0.18));
+  border: 1px solid rgba(108, 92, 231, 0.35);
+}
+
+.result-emoji {
+  font-size: 68px;
+  margin-bottom: 12px;
+}
+
+.result-title {
+  font-size: 26px;
+  font-weight: bold;
+  color: var(--title-color);
+  margin-bottom: 12px;
+  transition: color 0.3s;
+}
+
+.result-desc {
+  color: var(--plus-color);
+  font-size: 14px;
+  line-height: 1.75;
+  margin-bottom: 18px;
+  transition: color 0.3s;
+}
+
+.result-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--title-color);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.light .tag {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+/* Score bars */
+.score-section {
+  margin: 0 0 24px;
+  text-align: left;
+}
+
+.score-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.score-label {
+  color: var(--title-color);
+  font-size: 14px;
+  min-width: 90px;
+  transition: color 0.3s;
+}
+
+.score-bar-bg {
+  flex: 1;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+body.light .score-bar-bg {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.score-bar {
+  height: 100%;
+  border-radius: 10px;
+  width: 0%;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dog-bar {
+  background: linear-gradient(90deg, #f9ca24, #f0932b);
+}
+
+.cat-bar {
+  background: linear-gradient(90deg, #a29bfe, #6c5ce7);
+}
+
+.score-pct {
+  color: var(--title-color);
+  font-size: 14px;
+  font-weight: bold;
+  width: 40px;
+  text-align: right;
+  flex-shrink: 0;
+  transition: color 0.3s;
+}
+
+/* index.html 에서 동물상 테스트 링크 카드 */
+.animal-link-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.15), rgba(162, 155, 254, 0.15));
+  border: 1px solid rgba(108, 92, 231, 0.3);
+  border-radius: 14px;
+  text-decoration: none;
+  color: var(--title-color);
+  font-size: 15px;
+  font-weight: 600;
+  transition: transform 0.15s, box-shadow 0.15s, background 0.3s, color 0.3s;
+}
+
+.animal-link-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(108, 92, 231, 0.25);
+}
+
+.animal-link-card .card-emoji {
+  font-size: 22px;
+}
