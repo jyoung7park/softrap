@@ -1,0 +1,112 @@
+.policy-container {
+  width: 100%;
+  max-width: 680px;
+  text-align: left;
+}
+
+.policy-date {
+  color: var(--plus-color);
+  font-size: 13px;
+  margin-bottom: 28px;
+  transition: color 0.3s;
+}
+
+.policy-content section {
+  margin-bottom: 32px;
+}
+
+.policy-content h2 {
+  color: var(--title-color);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: color 0.3s, border-color 0.3s;
+}
+
+body.light .policy-content h2 {
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+.policy-content p {
+  color: var(--plus-color);
+  font-size: 14px;
+  line-height: 1.85;
+  margin-bottom: 8px;
+  transition: color 0.3s;
+}
+
+.policy-content ul {
+  padding-left: 20px;
+  margin-top: 8px;
+}
+
+.policy-content li {
+  color: var(--plus-color);
+  font-size: 14px;
+  line-height: 1.85;
+  margin-bottom: 6px;
+  transition: color 0.3s;
+}
+
+.policy-content a {
+  color: #f0932b;
+  text-decoration: none;
+}
+
+.policy-content a:hover {
+  text-decoration: underline;
+}
+
+/* About */
+.about-hero p {
+  color: var(--title-color);
+  font-size: 15px;
+  line-height: 1.8;
+  transition: color 0.3s;
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+@media (max-width: 500px) {
+  .service-cards { grid-template-columns: 1fr; }
+}
+
+.service-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 20px;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+body.light .service-card {
+  background: rgba(0, 0, 0, 0.03);
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+.service-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.service-card h3 {
+  color: var(--title-color);
+  font-size: 15px;
+  margin-bottom: 8px;
+  transition: color 0.3s;
+}
+
+.service-card p {
+  color: var(--plus-color);
+  font-size: 13px;
+  line-height: 1.65;
+  margin-bottom: 0;
+  transition: color 0.3s;
+}

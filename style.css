@@ -98,6 +98,14 @@ body {
   backdrop-filter: blur(10px);
 }
 
+.page-subtitle {
+  color: var(--plus-color);
+  font-size: 14px;
+  margin-top: -20px;
+  margin-bottom: 24px;
+  transition: color 0.3s;
+}
+
 h1 {
   color: var(--title-color);
   font-size: 28px;
@@ -193,6 +201,58 @@ button#draw:active:not(:disabled) {
 button#draw:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+.back-link {
+  display: inline-block;
+  color: var(--plus-color);
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 20px;
+  transition: color 0.2s;
+}
+
+.back-link:hover {
+  color: var(--title-color);
+}
+
+.site-footer {
+  width: 100%;
+  max-width: 740px;
+  margin-top: 20px;
+  padding: 24px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  transition: border-color 0.3s;
+}
+
+body.light .site-footer {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 10px;
+}
+
+.footer-nav a {
+  color: var(--plus-color);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.2s;
+}
+
+.footer-nav a:hover {
+  color: var(--title-color);
+}
+
+.footer-copy {
+  color: var(--plus-color);
+  font-size: 12px;
+  transition: color 0.3s;
 }
 
 .contact-link {
